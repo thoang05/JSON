@@ -62,7 +62,7 @@ nav ul li:hover {
     display: inline-block;
   }
   nav ul li a {
-    padding: 1em;
+    padding: 0.7em;
   }
 }
 
@@ -74,10 +74,10 @@ nav ul li:hover {
     margin:0 auto;
   }
   nav ul {
-    clear: right;
+    margin-right: 7.5em;
   }
-  nav ul li {
-    margin-right: 2.5em;
+  nav ul li a{
+    font-size: 1em;
   }
 }
 
