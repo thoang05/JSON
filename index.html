@@ -26,6 +26,26 @@
     <p id="serial-display"></p>
   </section>
   <section id="display" data-text="User Friendly Display">
+    <div class="row" style="padding-top: 1.5em;">
+      <div class="column" id="song1"></div>
+      <div class="column" id="song2"></div>
+    </div>
+    <div class="row">
+      <div class="column" id="song3"></div>
+      <div class="column" id="song4"></div>
+    </div>
+    <div class="row">
+      <div class="column" id="song5"></div>
+      <div class="column" id="song6"></div>
+    </div>
+    <div class="row">
+      <div class="column" id="song7"></div>
+      <div class="column" id="song8"></div>
+    </div>
+    <div class="row">
+      <div class="column" id="song9"></div>
+      <div class="column" id="song10"></div>
+    </div>
     <p id="uf-display" style="color: black; padding-top: 1em;"></p>
   </section>
   <section id="filter" data-text="Filter"></section>
@@ -33,11 +53,12 @@
   <script lang="javascript">
     strSong = JSON.stringify(songs);
     document.getElementById("serial-display").innerHTML = strSong;
-
+    // Part 3: User Friendly Display
+    k=1;
     for (i = 0; i < songs.length; i++) {
-      var title = "", artist = "", genre = "", year = "", info ="";
+      var title = "", artist = "Artist(s): ", genre = "Genre(s): ", year = "Released: ", info ="";
       title = songs[i].title;
-      year = songs[i].year_released;
+      year += songs[i].year_released;
 
       for (j = 0; j < songs[i].artists.length; j++) {
         if (j == songs[i].artists.length-1) {
@@ -59,8 +80,12 @@
       info += artist + "<br>";
       info += genre + "<br>";
       info += year + "<br>" + "<br>";
-      document.getElementById("uf-display").innerHTML += info;
+      // document.getElementById("uf-display").innerHTML += info;
+
+      document.getElementById("song" + [k]).innerHTML += info;
+      k++;
     }
+
     </script>
 
 
