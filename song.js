@@ -49,7 +49,8 @@ songs = [
     "year_released": "2016"
   },
   {
-    "title": "If the World Was Ending","artists": ["JP Saxe, Julia Michaels"],
+    "title": "If the World Was Ending",
+    "artists": ["JP Saxe, Julia Michaels"],
     "genre": ["Pop"],
     "year_released": "2019"
   },

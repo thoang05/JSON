@@ -4,11 +4,6 @@
   color: white;
   font-family: proxima-nova, sans-serif;
 }
-
-h1, h2, h3 {
-  margin: 0.5em 0 0.25em;
-}
-
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -22,34 +17,28 @@ nav {
   position: fixed;
   top: 0;
 }
-
 nav img {
   margin-left: 4em;
 }
-
 nav ul {
   float: right;
   margin-right: 2em;
 }
-
 nav ul li {
   list-style: none;
   display: inline-block;
   transition: 0.8s all;
 }
-
 nav ul li a {
   text-decoration: none;
   font-size: 1.05em;
   font-weight: 700;
   padding: 2em;
 }
-
 nav ul li:hover {
   background-color: #1DB954;
   border-bottom: 3px solid rgb(68, 226, 123)
 }
-
 .reslogo {
   display: none;
 }
@@ -83,23 +72,34 @@ nav ul li:hover {
 }
 
 section {
-  background: url(serialized.png) no-repeat top center;
-  background-size: cover;
   padding: 7em 3em 7em 3em;
 }
 
-#serial {
-  background: url(serialized.png) no-repeat top center;
-  background-size: cover;
+section p {
+  padding-top: 1.5em;
+  font-size: 1.05em;
 }
-
 section::before {
   content: attr(data-text);
   font-size: 3em;
   font-weight: 900;
   letter-spacing: -0.04em;
-
 }
+#serial {
+  background: url(serialized.png) no-repeat top center;
+  background-size: cover;
+}
+#display {
+  color: black;
+  height: auto;
+}
+
+#filter {
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
 
 
 

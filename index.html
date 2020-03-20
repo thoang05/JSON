@@ -22,16 +22,46 @@
     </nav>
   </div>
 
-  <section id="serial" data-text="Serialized Display"><br>
-    <p id="serial-display" style="font-size: 1.05em;"></p>
+  <section id="serial" data-text="Serialized Display">
+    <p id="serial-display"></p>
   </section>
-  <section id="display" data-text="Display"></section>
+  <section id="display" data-text="User Friendly Display">
+    <p id="uf-display" style="color: black; padding-top: 1em;"></p>
+  </section>
   <section id="filter" data-text="Filter"></section>
   
   <script lang="javascript">
     strSong = JSON.stringify(songs);
     document.getElementById("serial-display").innerHTML = strSong;
-  </script>
+
+    for (i = 0; i < songs.length; i++) {
+      var title = "", artist = "", genre = "", year = "", info ="";
+      title = songs[i].title;
+      year = songs[i].year_released;
+
+      for (j = 0; j < songs[i].artists.length; j++) {
+        if (j == songs[i].artists.length-1) {
+          artist += songs[i].artists[j];
+        } else {
+            artist += songs[i].artists[j] + ", ";
+        }
+      }
+
+      for (j = 0; j < songs[i].genre.length; j++) {
+        if (j == songs[i].genre.length-1) {
+          genre += songs[i].genre[j];
+        } else {
+            genre += songs[i].genre[j] + ", ";
+        }
+      }
+
+      info = "<strong><span style=color:black>" + title + "<span></strong><br />";
+      info += artist + "<br>";
+      info += genre + "<br>";
+      info += year + "<br>" + "<br>";
+      document.getElementById("uf-display").innerHTML += info;
+    }
+    </script>
 
 
 </body>
