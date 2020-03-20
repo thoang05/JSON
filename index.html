@@ -22,14 +22,17 @@
     </nav>
   </div>
 
-  <section id="serial">Serialized</section>
-  <section id="display">Display</section>
-  <section id="filter">Filter</section>
-  
-
+  <section id="serial" data-text="Serialized Display"><br>
+    <p id="serial-display" style="font-size: 1.05em;"></p>
+  </section>
+  <section id="display" data-text="Display"></section>
+  <section id="filter" data-text="Filter"></section>
   
   <script lang="javascript">
-    
+    strSong = JSON.stringify(songs);
+    document.getElementById("serial-display").innerHTML = strSong;
   </script>
+
+
 </body>
 </html>
