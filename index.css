@@ -71,7 +71,7 @@ nav ul li:hover {
 }
 
 section {
-  padding: 7em 3em 7em 3.5em;
+  padding: 7em 3em;
   height: auto;
 }
 section p {
@@ -87,11 +87,11 @@ section::before {
 #serial {
   background: url(serialized.png) no-repeat top center;
   background-size: cover;
-  
+  display: none;
 }
 #display {
   color: black;
-  
+  display: none;
 
 }
 #filter {
@@ -124,7 +124,7 @@ select {
   outline: 0;
   border: 2px solid white;
   background: black;
-  padding: 0em.5em;
+  padding: 0em .5em;
   cursor: pointer;
   font-size: 1.05em;
 }
@@ -135,9 +135,16 @@ select {
   height: 3em;
 }
 
-select:active, select:hover {
-  outline: none
+input[type=button] {
+  background-color: #1DB954;
+  border: none;
+  outline: 0;
+  padding: 0em 1.2em;
+  margin: 0.4em 0 0 1em;
+  font-size: 1.05em;
+  font-weight: 600;
+  border-radius: 2em;
+  cursor: pointer;
+  height: 2em;
 }
-
-
 
