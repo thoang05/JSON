@@ -25,6 +25,7 @@
   <section id="serial" data-text="Serialized Display">
     <p id="serial-display"></p>
   </section>
+
   <section id="display" data-text="User Friendly Display">
     <div class="row" style="padding-top: 1.5em;">
       <div class="column" id="song1"></div>
@@ -48,9 +49,28 @@
     </div>
     <p id="uf-display" style="color: black; padding-top: 1em;"></p>
   </section>
-  <section id="filter" data-text="Filter"></section>
+
+  <section id="filter" data-text="Filter">
+    <form name="filtergenre" style="padding-top: 1.5em; font-size: 1.05em; font-weight: 600;">
+      Pick a genre: <br><br>
+      <div class="select">
+        <select name="slct" id="slct">
+          <option selected disabled>Choose a genre</option>
+          <option value="1">Hip Hop</option>
+          <option value="2">Pop</option>
+          <option value="3">Rap</option>
+          <option value="4">Reggaeton</option>
+          <option value="5">Pop Punk</option>
+          <option value="6">Electronic</option>
+          <option value="7">R&B</option>
+        </select>
+      </div>
+      <input type ="button" value = "Filter" style="cursor: pointer;" onclick="filter()" />
+    </form>
+  </section>
   
   <script lang="javascript">
+    // Part 2: Serialized Display
     strSong = JSON.stringify(songs);
     document.getElementById("serial-display").innerHTML = strSong;
     // Part 3: User Friendly Display
@@ -76,18 +96,10 @@
         }
       }
 
-      info = "<strong><span style=color:black>" + title + "<span></strong><br />";
-      info += artist + "<br>";
-      info += genre + "<br>";
-      info += year + "<br>" + "<br>";
-      // document.getElementById("uf-display").innerHTML += info;
-
+      info = "<strong><span style=color:black>" + title + "<span></strong><br />" + artist + "<br>" + genre + "<br>"+ year + "<br>" + "<br>";
       document.getElementById("song" + [k]).innerHTML += info;
       k++;
     }
-
     </script>
-
-
 </body>
 </html>
