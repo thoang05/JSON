@@ -55,7 +55,7 @@
       Pick a genre: <br><br>
       <div class="select">
         <select name="slct" id="slct">
-          <option selected disabled>Choose a genre</option>
+          <option>Choose a genre</option>
           <option>Hip Hop</option>
           <option>Pop</option>
           <option>Reggaeton</option>
@@ -66,7 +66,7 @@
         </select>
         <input type ="button" value = "Filter" style="cursor: pointer;" onclick="filter()" />
       </div>
-      
+      <p id="display-filter"></p>
     </form>
   </section>
   
@@ -74,6 +74,7 @@
     // Part 2: Serialized Display
     strSong = JSON.stringify(songs);
     document.getElementById("serial-display").innerHTML = strSong;
+
     // Part 3: User Friendly Display
     k=1;
     for (i = 0; i < songs.length; i++) {
@@ -100,6 +101,25 @@
       info = "<strong><span style=color:black>" + title + "<span></strong><br />" + artist + "<br>" + genre + "<br>"+ year + "<br>" + "<br>";
       document.getElementById("song" + [k]).innerHTML += info;
       k++;
+
+      // Part 4: Filter the Data
+      function filter() {
+        filtered_songs = ""; 
+        genre_choice = document.getElementById("slct").value;
+        if (genre_choice == "Choose a genre") {
+          document.getElementById("display-filter").innerHTML = "<span style=color:#f57373>" + "Please choose a genre" + "<span>";
+          return;
+        }
+        for (i = 0; i < songs.length; i++) {
+          for (j = 0; j < songs[i].genre.length; j++) {
+            if (songs[i].genre[j] == genre_choice) {
+              filtered_songs += songs[i].title + "<br>";
+            }
+          }
+        }
+        results = "<h1>" + "Displaying All " + "<span style=color:#1DB954>" + genre_choice + "</span>" + " Songs" + "</h1><br>" + filtered_songs;
+        document.getElementById("display-filter").innerHTML = results;
+      }
     }
     </script>
 </body>

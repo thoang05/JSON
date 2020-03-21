@@ -87,17 +87,14 @@ section::before {
 #serial {
   background: url(serialized.png) no-repeat top center;
   background-size: cover;
-  display: none;
 }
 #display {
   color: black;
-  display: none;
-
 }
 #filter {
   background-color: black;
   color: white;
-  height: 100vh;
+  height: auto;
 }
 
 .row {
